@@ -1,5 +1,7 @@
 # Use Case: Team / Workspace AI Product
 
+**YouTube walkthrough:** [Team Workspace Ai — System Design #Shorts](https://youtu.be/lgwZGeB3lnw)
+
 **Design doc:** [docs/DESIGN.md](./docs/DESIGN.md) — architecture, patterns, and why.
 
 
@@ -47,6 +49,9 @@ Workspace → SSO/roles → shared threads
 
 
 ## Design walkthrough (opens on GitHub)
+
+> **Watch on YouTube:** [Team Workspace Ai — System Design #Shorts](https://youtu.be/lgwZGeB3lnw)
+
 
 ![Design overview](docs/video/design-overview.gif)
 
