@@ -1,0 +1,40 @@
+"""Team Workspace AI — thin self-contained FastAPI POC."""
+
+from __future__ import annotations
+
+from typing import Optional
+
+from fastapi import FastAPI, HTTPException, Request
+from pydantic import BaseModel, Field
+
+from poc_core import MockLLM, TokenBucket, health_payload
+from poc_core.safety import SafetyPlane
+from poc_core.stores import InMemoryStore, MockVectorIndex
+
+USE_CASE = "Team Workspace AI"
+app = FastAPI(title=USE_CASE)
+llm = MockLLM()
+store = InMemoryStore()
+safety = SafetyPlane()
+
+@app.get("/health")
+def health():
+    return health_payload(USE_CASE)
+
+
+acls = {"w1": {"alice": "member", "bob": "admin", "contractor": "none"}}
+threads: dict[str, list[dict]] = {}
+
+class ThreadIn(BaseModel):
+    user: str
+    role: str = "member"
+    text: str
+
+@app.post("/workspaces/{wid}/threads")
+async def thread(wid: str, body: ThreadIn):
+    role = acls.get(wid, {}).get(body.user, "none")
+    if role == "none":
+        raise HTTPException(403, detail="workspace ACL deny")
+    text = await llm.complete(body.text, max_tokens=12)
+    threads.setdefault(wid, []).append({"user": body.user, "text": body.text, "reply": text})
+    return {"wid": wid, "role": role, "reply": text, "n": len(threads[wid])}
