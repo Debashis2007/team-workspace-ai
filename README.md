@@ -74,3 +74,10 @@ curl -s http://127.0.0.1:8000/health | jq
 ```
 
 curl -s -X POST http://127.0.0.1:8000/workspaces/w1/threads -H 'Content-Type: application/json' -d '{"user":"alice","role":"member","text":"summarize"}' | jq
+
+---
+
+**Copyright (c) 2026 Debashis Bhattacharjee. All Rights Reserved.**  
+Unauthorized copying or redistribution of this material is prohibited.  
+GitHub: [Debashis2007](https://github.com/Debashis2007)
+
