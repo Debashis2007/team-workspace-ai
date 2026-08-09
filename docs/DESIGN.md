@@ -1,7 +1,7 @@
 # Design: Team Workspace AI
 
 **Project:** `team-workspace-ai`  
-**Parent system design:** [10 — Global Realtime Product Surface](../10-global-realtime-product-surface.md) · [04 — RAG / Document Retrieval](../04-rag-embedding-pipeline.md) · [07 — Agent Runtime with Hard Containment](../07-agent-runtime-containment.md)
+**Parent system design:** [10 — Global Realtime Product Surface](https://github.com/Debashis2007/team-workspace-ai/blob/main/10-global-realtime-product-surface.md) · [04 — RAG / Document Retrieval](https://github.com/Debashis2007/team-workspace-ai/blob/main/04-rag-embedding-pipeline.md) · [07 — Agent Runtime with Hard Containment](https://github.com/Debashis2007/team-workspace-ai/blob/main/07-agent-runtime-containment.md)
 
 ## 1. What this POC demonstrates
 
