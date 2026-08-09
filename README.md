@@ -7,8 +7,8 @@
 **Design doc:** [docs/DESIGN.md](./docs/DESIGN.md) — architecture, patterns, and why.
 
 
-**Parent system design:** [10 — Global Realtime Product Surface](../10-global-realtime-product-surface.md)  
-**Also references:** [04 — RAG](../04-rag-embedding-pipeline.md), [07 — Agents](../07-agent-runtime-containment.md)
+**Parent system design:** [10 — Global Realtime Product Surface](./10-global-realtime-product-surface.md)  
+**Also references:** [04 — RAG](./04-rag-embedding-pipeline.md), [07 — Agents](./07-agent-runtime-containment.md)
 
 ## Users & problem
 
@@ -19,7 +19,7 @@ Teams share AI threads in a workspace with roles, shared docs, and connectors. A
 | Requirement | Target |
 |-------------|--------|
 | Authz | Workspace roles on threads/assets |
-| Knowledge | Shared corpus with ACL ([04](../04-rag-embedding-pipeline.md)) |
+| Knowledge | Shared corpus with ACL ([04](./04-rag-embedding-pipeline.md)) |
 | Admin | Audit, retention, SSO |
 | Residency | Workspace region pin |
 
@@ -27,8 +27,8 @@ Teams share AI threads in a workspace with roles, shared docs, and connectors. A
 
 ```
 Workspace → SSO/roles → shared threads
-  → generation with workspace policy packs ([06](../06-safety-moderation-pipeline.md))
-  → optional connectors via contained agents ([07](../07-agent-runtime-containment.md))
+  → generation with workspace policy packs ([06](./06-safety-moderation-pipeline.md))
+  → optional connectors via contained agents ([07](./07-agent-runtime-containment.md))
   → audit export for admins
 ```
 
